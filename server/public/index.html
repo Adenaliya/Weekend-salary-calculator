@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Server-Side Calculator</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server-Side Calculator</title>
     <script defer src="scripts/axios.js"></script>
     <script defer src="scripts/client.js" charset="utf-8"></script>
   </head>
   <body>
     <h1>Server-Side Calculator</h1>
 
-    <form data-testid="calculator">
-      <input data-testid="numOne" placeholder="First Number">
-      <button>+</button>
-      <button>-</button>
-      <button>*</button>
-      <button>/</button>
-      <input data-testid="numTwo" placeholder="Second Number">
-      <button>=</button>
-      <button>C</button>
+    <form data-testid="calculator" id="calculatorForm">
+      <input type="number" id="numOne" placeholder="First Number">
+      <button type="button" class="button-operator" data-testid="add" onclick="setOperator(event)">+</button>
+      <button type="button" class="button-operator" data-testid="subtract" onclick="setOperator(event)">-</button>
+      <button type="button" class="button-operator" data-testid="multiply" onclick="setOperator(event)">*</button>
+      <button type="button" class="button-operator" data-testid="divide" onclick="setOperator(event)">/</button>
+      <input type="number" id="numTwo" placeholder="Second Number">
+      <button type="button" data-testid="equals" onclick="calculate(event)">=</button>
+      <button type="button" data-testid="clear" onclick="clearCalc(event)">C</button>
     </form>
 
-    <section data-testid="recentResult">
+    <section data-testid="recentResult" id="recentResult">
       <!-- The most recent calculation result goes here. -->
     </section>
 
-    <section data-testid="resultHistory">
+    <section data-testid="resultHistory" id="resultHistory">
       <!-- The list of calculation results goes here. -->
     </section>
   </body>
 </html>
+
+

@@ -5,6 +5,8 @@ let PORT = process.env.PORT || 5001;
 app.use(express.json());
 app.use(express.static('server/public'));
 
+const calculationsRouter = require('./router/calculationsRouter.js');
+app.use('/calculations', calculationsRouter);
 // Global variable that will contain all of the
 // calculation objects:
 let calculations = []
@@ -13,7 +15,10 @@ let calculations = []
 // Here's a wonderful place to make some routes:
 
 // GET /calculations
-
+app.get('/calculations', (req, res) => {
+  console.log('Sending calculations:', calculations);
+  res.json(calculations);
+});
 // POST /calculations
 
 
