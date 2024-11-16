@@ -26,7 +26,7 @@ function getCalculations() {
         }
         calHistory.innerHTML = contentHTML;
       })
-      .catch(err => console.log(err));
+    
   }
 
 function getRecent() {

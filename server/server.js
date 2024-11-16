@@ -16,8 +16,8 @@ let calculations = []
 
 // GET /calculations
 app.get('/calculations', (req, res) => {
-  console.log('Sending calculations:', calculations);
-  res.json(calculations);
+  console.log('/calculations GET');
+  res.send(calculations);
 });
 // POST /calculations
 
